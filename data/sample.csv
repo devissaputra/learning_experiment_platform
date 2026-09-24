@@ -1,3 +1,13 @@
-learner,group,pre,post
-L01,treatment,60,78
-L02,control,62,68
+participant_id,assigned_group,pre,post
+P01,control,61,68
+P02,control,65,71
+P03,treatment,58,68
+P04,control,59,65
+P05,control,67,73
+P06,treatment,66,76
+P07,treatment,68,77
+P08,treatment,62,73
+P09,treatment,70,80
+P10,treatment,64,74
+P11,control,69,
+P12,control,63,70
