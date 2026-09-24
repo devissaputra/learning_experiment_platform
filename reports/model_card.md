@@ -6,28 +6,64 @@ Learning Experiment Platform
 
 ## Purpose
 
-Small reproducible experiment scaffold for random assignment, pre and post gains, and Cohen d effect size.
+A transparent research scaffold for small two-group learning experiments with reproducible assignment, pre/post outcomes, effect estimates, bootstrap uncertainty, and attrition review.
 
 ## Current maturity
 
-Working research prototype. The bundled example checks the software path with synthetic inputs. It does not establish validity for real learners, instructors, courses, or workplaces.
+Working research prototype. The bundled example is synthetic and demonstrates the software path only. It does not establish an educational treatment effect.
 
 ## Inputs
 
-See `../data/README.md` for the current synthetic schema and the documentation expected before real data are connected.
+The integrated analysis expects participant records containing:
+
+- participant ID
+- assigned group
+- finite numeric pre score
+- finite numeric post score or a missing post value
 
 ## Outputs
 
-The current code produces randomized group assignments, paired gain scores, and Cohen d effect size. These outputs are research signals and should be interpreted with the educational context that produced them.
+The current analysis returns:
+
+- participant and group counts
+- observed outcome counts
+- attrition counts and rates
+- pre, post, and gain means by assigned group
+- raw treatment-minus-control differences
+- pooled-SD Cohen d when estimable
+- seeded percentile-bootstrap confidence intervals for raw mean differences
+- transparent analysis flags
+- assignment and analysis method labels
+
+## Assignment and analysis distinction
+
+The software can create a seeded random assignment, but `analyze_experiment()` does not assume that every dataset was randomized. The caller records the assignment method explicitly.
+
+The current outcome analysis stays grouped by assigned group. Missing post outcomes are counted as attrition and omitted from complete-case post/gain estimates.
+
+## Not-estimable states
+
+Cohen d is not forced to zero when the pooled standard deviation is zero. It is returned as not estimable.
+
+Effects are also left unestimated when too few observed outcomes remain in a group.
 
 ## Evidence needed before real use
 
-Verify randomization balance, pre specify outcomes, report uncertainty, and analyze attrition or missingness. Any causal conclusion must follow the actual assignment and compliance structure of the study.
+A real study should document recruitment, assignment, intervention fidelity, primary outcome, sample size rationale, exclusions, missing-data strategy, attrition, noncompliance, contamination, protocol deviations, and uncertainty.
 
-## Main limitation
+## Main limitations
 
-The code does not protect a study from bad randomization, selective outcome reporting, noncompliance, or weak measurement. It is an analysis scaffold, not an experiment management system.
+The current baseline:
+
+- handles only two assigned groups
+- uses complete cases for missing post outcomes
+- does not implement cluster randomization
+- does not implement covariate-adjusted models
+- does not implement causal estimators for noncompliance
+- does not implement quasi-experimental identification strategies
+- does not provide p-values or model-based hypothesis tests
+- does not prove that a study was preregistered
 
 ## Human oversight
 
-A person must review any output before it can affect a learner, instructor, applicant, or employee.
+Researchers must decide whether the design, measurements, missing-data assumptions, and causal interpretation are defensible. The software output should never substitute for that judgment.
