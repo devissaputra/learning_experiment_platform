@@ -5,6 +5,6 @@ type: software
 authors:
   - family-names: "Saputra"
     given-names: "Devis Wawan"
-repository-code: "https://github.com/devissaputra/learning-experiment-platform"
+repository-code: "https://github.com/devissaputra/learning_experiment_platform"
 license: MIT
 version: 0.1.0
