@@ -1,0 +1,8 @@
+{
+  "experiment_id": "DEMO-001",
+  "hypothesis": "The synthetic learning-design intervention increases post-test performance.",
+  "primary_outcome": "post-test score",
+  "exclusion_rule": "No post-test value is imputed; missing post outcomes remain attrition.",
+  "analysis_method": "complete cases analyzed by assigned group",
+  "assignment_seed": 42
+}
