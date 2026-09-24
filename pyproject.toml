@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "learning-experiment-platform"
+version = "0.1.0"
+description = "Small reproducible experiment scaffold for random assignment, pre and post gains, and Cohen d effect size."
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Devis Wawan Saputra"}]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
