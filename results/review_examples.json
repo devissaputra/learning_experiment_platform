@@ -1,0 +1,8 @@
+{
+  "kind": "illustrative_calculation",
+  "note": "Synthetic independent groups; not an intervention estimate.",
+  "outputs": {
+    "Cohen d: [2,3,4] vs [1,2,3]": 1.0,
+    "raw mean difference": 1
+  }
+}

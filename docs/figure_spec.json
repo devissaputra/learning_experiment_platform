@@ -1,0 +1,30 @@
+{
+  "question": "How should a small learning experiment report its outcomes?",
+  "data": "Synthetic assignment records with baseline, follow-up and missing-outcome indicators.",
+  "method": "Analyze observed outcomes by assigned group; retain attrition, baseline imbalance, standardized effects and bootstrap uncertainty.",
+  "formula": "Cohen d = (mean treatment - mean control)/pooled sample SD.",
+  "interpretation": "Complete-case analysis by assignment is not a full intention-to-treat estimate when outcomes are missing. Observational assignment and attrition can undermine causal claims even when a mean difference is precise.",
+  "status": "SYNTHETIC / RULE-BASED PROTOTYPE | no educational validity claim",
+  "source": "results/review_examples.json",
+  "rows": [
+    {
+      "label": "Cohen d: [2,3,4] vs [1,2,3]",
+      "path": [
+        "outputs",
+        "Cohen d: [2,3,4] vs [1,2,3]"
+      ],
+      "unit": "unitless"
+    },
+    {
+      "label": "raw mean difference",
+      "path": [
+        "outputs",
+        "raw mean difference"
+      ],
+      "unit": "unitless"
+    }
+  ],
+  "table_title": "Worked example — illustrative, not a measured research result",
+  "evidence_note": "Illustrative inputs and calculations are in scripts/review_examples.py.",
+  "finding": "This experiment-analysis prototype keeps assignment, baseline measures, follow-up outcomes, and attrition in one inspectable record. It reports group differences, pooled-SD effect sizes, and bootstrap intervals while flagging sparse groups and baseline imbalance. Missing outcomes are handled as complete cases grouped by assignment, so the documentation explicitly limits causal interpretation and avoids calling the analysis a complete intention-to-treat estimate."
+}

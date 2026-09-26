@@ -1,3 +1,7 @@
+# Calculation reading guide: ../CALCULATIONS.md (repository root).
+# Cohen d = (mean treatment - mean control)/pooled sample SD.
+# Complete-case analysis by assignment is not a full intention-to-treat estimate when outcomes are missing. Observational assignment and attrition can undermine causal claims even when a mean difference is precise.
+
 import math
 import random
 from collections.abc import Mapping, Sequence

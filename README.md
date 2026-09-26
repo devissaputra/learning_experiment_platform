@@ -1,14 +1,29 @@
 # Learning Experiment Platform
 
+This experiment-analysis prototype keeps assignment, baseline measures, follow-up outcomes, and attrition in one inspectable record. It reports group differences, pooled-SD effect sizes, and bootstrap intervals while flagging sparse groups and baseline imbalance. Missing outcomes are handled as complete cases grouped by assignment, so the documentation explicitly limits causal interpretation and avoids calling the analysis a complete intention-to-treat estimate.
+
+## Start here
+
+- [Calculations, evidence and verification scope](CALCULATIONS.md)
+- [Figure sources and exact numerical paths](docs/figure_spec.json)
+- [Data status](data/README.md)
+
+![Study question, data, design and interpretation](assets/review_overview.svg)
+
+![Defined calculation and source-linked evidence](assets/review_calculations.svg)
+
+**Review scope:** 25 existing unittest checks passed. The bundled demonstration executed successfully in this review.
+
+## Detailed project documentation
+
 > Reproducible two-group learning experiments with seeded assignment, pre/post analysis, effect sizes, bootstrap uncertainty, and attrition review.
 
 [![CI](https://github.com/devissaputra/learning_experiment_platform/actions/workflows/ci.yml/badge.svg)](https://github.com/devissaputra/learning_experiment_platform/actions/workflows/ci.yml)
 
-![Learning Experiment Platform workflow](assets/architecture.svg)
 
 **Area:** AI in Education (AIEd) · Learning Science & Experimental Design  
 **Status:** working research prototype  
-**Author:** Devis Wawan Saputra
+**Author:** Devis Saputra
 
 ## What this project is for
 
@@ -39,7 +54,6 @@ The demo now uses one connected path:
 7. bootstrap confidence intervals for raw mean differences
 8. surface analysis flags for human review
 
-![Learning Experiment Platform data and reasoning flow](assets/data_flow.svg)
 
 The code does not convert this workflow into an automatic causal claim.
 
@@ -113,7 +127,6 @@ This local metadata supports reproducibility. It is **not** a substitute for an 
 
 ## Synthetic demo
 
-![Synthetic demo snapshot for Learning Experiment Platform](assets/demo_snapshot.svg)
 
 The bundled example contains 12 synthetic participants, a seeded 6/6 assignment, and one intentionally missing control post-test outcome so the attrition path is exercised.
 
@@ -152,7 +165,6 @@ The current baseline uses only the Python standard library.
 
 ## Evaluation view
 
-![Learning Experiment Platform evaluation checklist](assets/evaluation_dashboard.svg)
 
 The evaluation graphic shows what a real validation study should inspect. Its bars are illustrative; they are not measured research results.
 
